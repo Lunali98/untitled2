@@ -66,10 +66,8 @@ async def dump_all_messages(channel):
 
 
 async def main():
-	path = "C:/Users/User/PycharmProjects/untitled2/Dataset.csv"
-	for i, line in enumerate(open(path)):
-		channel = await client.get_entity(line.strip())
-
+	url = input("Введите ссылку на канал или чат: ")
+	channel = await client.get_entity(url)
 	await dump_all_messages(channel)
 
 
